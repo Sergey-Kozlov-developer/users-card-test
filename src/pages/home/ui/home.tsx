@@ -1,8 +1,9 @@
+import {UsersWidget} from "@/widget/users";
 
 export const Home = () => {
     return (
         <div>
-            Home
+            <UsersWidget />
         </div>
     );
 };

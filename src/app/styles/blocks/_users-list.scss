@@ -1,0 +1,36 @@
+@use "../../styles/base/helpers" as *;
+
+.users {
+
+  &__list {
+
+  }
+
+  &__card {
+	display: flex;
+	padding: rem(24);
+	width: rem(360);
+	background: var(--color-white);
+	&-img {
+	  width: rem(112);
+	}
+  }
+
+  &__text {
+
+	&-name {
+
+	}
+
+	&-company {
+
+	}
+
+	&-city {
+
+	}
+
+  }
+
+
+}
