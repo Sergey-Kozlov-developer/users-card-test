@@ -1,55 +1,65 @@
 @use "../../styles/base/helpers" as *;
 
 .header {
-	// margin-top: rem(10);
-	position: sticky;
-	z-index: 100;
-	top: 0;
-	height: rem(
-		188
-	); // фиксированая высота, чтобы контент по навигацией не скроллился
+  padding-top: rem(18);
+  padding-bottom: rem(18);
+  position: sticky;
+  z-index: 100;
+  top: 0;
+  width: 100%;
+  //height: rem(
+  //	188
+  //); // фиксированая высота, чтобы контент по навигацией не скроллился
 
-	animation-name: scrolling-header;
-	animation-fill-mode: both;
-	animation-timeline: scroll();
-	animation-range: rem(100) rem(200);
-	background: var(--color-bg);
-	// border-radius: rem(20);
-	font-size: rem(20);
+  animation-name: scrolling-header;
+  animation-fill-mode: both;
+  animation-timeline: scroll();
+  animation-range: rem(100) rem(200);
+  background: var(--color-white);
 
-	@keyframes scrolling-header {
-		to {
-			background-color: var(--color-bg);
-			border-color: var(--color-yellow);
-		}
+  @keyframes scrolling-header {
+	to {
+	  background-color: var(--color-bg);
+	  border-color: var(--color-yellow);
 	}
+  }
 
-	&__inner {
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
-	}
-	&__logo {
-		display: flex;
-		align-items: center;
+  &__inner {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+  }
 
-		&-title {
-			font-size: rem(20);
-		}
-	}
+  &__logo {
+	display: flex;
+	align-items: center;
+	gap: rem(8);
 
-	&__title {
-		font-size: rem(31);
+	&-title {
+	  font-size: rem(20);
 	}
+  }
 
-	&__menu {
-		width: 100%;
-		background-color: var(--color-gray-700);
-		padding: rem(10) rem(10);
-		&-list {
-			display: flex;
-			justify-content: space-between;
-			align-items: center;
-		}
+  &__info {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: rem(4);
+
+  }
+
+  &__profile {
+	display: flex;
+	align-items: center;
+	gap: rem(8);
+
+	&-img {
+	  width: rem(20);
 	}
+	&-name {
+	  font-size: rem(16);
+	  font-weight: 500;
+	}
+  }
+
 }

@@ -16,13 +16,6 @@
 	--box-shadow: #{rem(15)} #{rem(15)} #{rem(15)} #{rem(-10)}
 		var(--color-gray-300);
 
-	--color-info: #5a87fc;
-	--color-gray-300: #e5e8ed;
-	--color-gray-400: #d7dadd;
-	--color-gray-600: #9a9ca5;
-	--color-gray-700: #787a80;
-	--color-gray-800: #424551;
-	--color-gray-900: #1e212c;
 
 	--gradient: linear-gradient(
 		45deg,
@@ -37,7 +30,7 @@
 	--font-family-base: "Manrope", sans-serif;
 	--font-family-logo: "Inter", sans-serif;
 
-	--container-width: #{rem(1126)};
+	--container-width: #{rem(1140)};
 	// внутренние границы(можно посмотреть по mobile макету)
 	--container-padding-x: #{rem(15)};
 
