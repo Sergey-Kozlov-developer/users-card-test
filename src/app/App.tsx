@@ -1,11 +1,13 @@
+import {RouterProvider} from "react-router";
+import {routes} from "@app/routes/routes.ts";
 
 
 function App() {
 
     return (
-        <div>
-            <h1>Users Card</h1>
-        </div>
+        <>
+            <RouterProvider router={routes} />
+        </>
     )
 }
 
