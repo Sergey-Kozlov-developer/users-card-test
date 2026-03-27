@@ -11,7 +11,7 @@ export const Header = () => {
                     <div className="header__logo">
                         <img className="header__logo-img" src={logo} alt="Logo"/>
                         <span className="header__logo-title">
-						at-<strong>work</strong>
+						at-<strong className="header__logo-stong">work</strong>
 					</span>
                     </div>
                     <div className="header__info">
