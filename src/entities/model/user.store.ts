@@ -1,6 +1,6 @@
 import type {User} from "@shared/types/user.ts";
 import {create} from "zustand/react";
-import {persist} from "zustand/middleware/persist";
+import {persist} from "zustand/middleware";
 
 
 interface UserStore {
