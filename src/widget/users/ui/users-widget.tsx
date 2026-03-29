@@ -35,7 +35,7 @@ export const UsersWidget = () => {
     return (
         <div className='users-widget'>
             <div className='users-widget__section'>
-                <h1 className='users-widget__title'>Активные ({activeUsers.length})</h1>
+                <h1 className='users-widget__title'>Активные</h1>
                 <UsersList
                     users={activeUsers}
                     onArchive={archiveUser}
@@ -45,7 +45,7 @@ export const UsersWidget = () => {
 
             {archivedUsers.length > 0 && (
                 <div className='users-widget__section'>
-                    <h2 className='users-widget__subtitle'>Архив ({archivedUsers.length})</h2>
+                    <h2 className='users-widget__subtitle'>Архив</h2>
                     <UsersList
                         users={archivedUsers}
                         isArchived
