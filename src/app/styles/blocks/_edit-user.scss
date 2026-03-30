@@ -1,38 +1,60 @@
+@use "../../styles/base/helpers" as *;
+
 .edit-user {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 20px;
+
+  margin-bottom: rem(265);
+
+  &__field {
+	display: flex;
+	gap: rem(40);
+
+	//display: grid;
+	//grid-template-columns: repeat(2, 1fr);
+  }
 
   &__back {
 	background: none;
 	border: none;
-	font-size: 16px;
+	font-size: rem(20);
 	cursor: pointer;
-	margin-bottom: 20px;
-	color: #2196f3;
+	margin-bottom: rem(20);
+	margin-top: rem(20);
+	color: var(--color-02);
+	font-weight: 600;
   }
 
   &__profile {
-	text-align: center;
-	margin-bottom: 30px;
+
+	background-color: var(--color-white);
+	padding: rem(40);
+	border-radius: rem(16);
+	text-align: left;
   }
 
   &__avatar {
-	width: 100px;
-	height: 100px;
-	border-radius: 50%;
-	margin-bottom: 16px;
+	width: rem(360);
+	margin-bottom: rem(16);
   }
 
   &__title {
-	font-size: 24px;
+	font-size: rem(24);
 	margin: 0;
+  }
+
+  &__info {
+	margin-top: rem(24);
+
+	&-text {
+	  margin-bottom: rem(12);
+	  font-size: rem(16);
+	  color: var(--color-03);
+	}
   }
 
   &__not-found {
 	text-align: center;
-	padding: 40px;
-	font-size: 18px;
+	padding: rem(40);
+	font-size: rem(18);
 	color: #666;
   }
 }

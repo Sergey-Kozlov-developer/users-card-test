@@ -1,4 +1,5 @@
 import {useEffect} from "react";
+import doneIcon from '@assets/icons/done.svg'
 
 interface Props {
     message: string;
@@ -15,8 +16,11 @@ export const Toast = ({ message, onClose, duration = 4000 }: Props) => {
     return (
         <div className="toast" onClick={onClose}>
             <div className="toast__container" onClick={(e) => e.stopPropagation()}>
-                <span className="toast__message">{message}</span>
                 <button onClick={onClose} className="toast__close">✕</button>
+                <div className="toast__content">
+                    <img src={doneIcon} alt="Success" className="toast__icon" />
+                    <span className="toast__message">{message}</span>
+                </div>
             </div>
         </div>
     );

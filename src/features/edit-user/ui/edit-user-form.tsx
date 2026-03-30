@@ -2,6 +2,7 @@ import type {User} from "@shared/types/user.ts";
 import {type EditUserFormData, editUserSchema} from "@features/edit-user/model/edit-user.shema.ts";
 import {useForm} from "react-hook-form";
 import { zodResolver } from '@hookform/resolvers/zod';
+import {Divider} from "@shared/ui";
 
 
 interface Props {
@@ -27,6 +28,8 @@ export const EditUserForm = ({ user, onSubmit }: Props) => {
     });
     return (
         <form onSubmit={handleSubmit(onSubmit)} className="edit-form">
+            <h1 className='edit-form__title'>Данные профиля</h1>
+            <Divider />
             <div className="edit-form__field">
                 <label className="edit-form__label">Имя</label>
                 <input

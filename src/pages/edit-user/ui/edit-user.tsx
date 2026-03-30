@@ -3,9 +3,9 @@ import {useUsers} from "@entities/user/api/queries.ts";
 import {useUserStore} from "@entities/model/user.store.ts";
 import {useState} from "react";
 import type {EditUserFormData} from "@features/edit-user/model/edit-user.shema.ts";
-import {Loader, Toast} from "@shared/ui";
+import {Divider, Loader, Toast} from "@shared/ui";
 import {EditUserForm} from "@features/edit-user";
-import userPhoto from '@assets/images/user-photo.png'
+import userPhoto from '@assets/images/edit-profile.png'
 
 export const EditUser = () => {
     const { id } = useParams<{ id: string }>();
@@ -48,12 +48,28 @@ export const EditUser = () => {
                 ← Назад
             </button>
 
+            <div className="edit-user__field">
+
             <div className="edit-user__profile">
                 <img src={userPhoto} alt={user.name} className="edit-user__avatar" />
                 <h1 className="edit-user__title">Данные профиля</h1>
+
+                <div className="edit-user__info">
+                    <Divider />
+                    <p className='edit-user__info-text'>Рабочее пространство</p>
+                    <Divider />
+
+                    <p className='edit-user__info-text'>Приватность</p>
+                    <Divider />
+
+                    <p className='edit-user__info-text'>Безопасность</p>
+                    <Divider />
+
+                </div>
             </div>
 
             <EditUserForm user={user} onSubmit={handleSave} />
+            </div>
 
             {showToast && (
                 <Toast
