@@ -11,7 +11,7 @@ export const EditUser = () => {
     const {id} = useParams<{ id: string }>();
     const navigate = useNavigate();
     const {data: apiUsers, isLoading: isLoadingUsers} = useUsers();
-    const {users, setUsers} = useUserStore();
+    const {users, updateUser} = useUserStore();
     const [showToast, setShowToast] = useState(false);
 
     if (isLoadingUsers) return <Loader/>;
@@ -24,21 +24,15 @@ export const EditUser = () => {
     }
 
     const handleSave = (data: EditUserFormData) => {
-        const updatedUsers = users.map(u =>
-            u.id === userId
-                ? {
-                    ...u,
-                    name: data.name,
-                    username: data.username,
-                    email: data.email,
-                    address: {...u.address, city: data.city},
-                    phone: data.phone,
-                    company: {...u.company, name: data.companyName},
-                }
-                : u
-        );
 
-        setUsers(updatedUsers);
+        updateUser(userId, {
+            name: data.name,
+            username: data.username,
+            email: data.email,
+            city: data.city,
+            phone: data.phone,
+            companyName: data.companyName,
+        });
         setShowToast(true);
     };
 
