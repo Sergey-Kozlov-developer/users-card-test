@@ -1,73 +1,34 @@
-# React + TypeScript + Vite
+# Тестовое задание User card
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+- Результат можно посмотреть [тут](https://sergey-kozlov-developer-users-card-test-cfea.twc1.net/)
 
-Currently, two official plugins are available:
+## Использованный стек:
+**React, FSD, TypeScript, Zustand, React Hook Form + Zod, tanstack query, SCSS**
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+### Что реализовал:
+- на главной странице загрузка пользователей из jsonplaceholder [API](https://jsonplaceholder.typicode.com/users)
+- на главной странице есть активные и архивные пользователи
+- у каждого пользователя в карточке есть dropdown, где можно выбрать редактирование, скрыть и архив
+- на странице редактирования можно отредактировать данные, которые приходят из API
+- на странице редактирования подключена проверка валидации React Hook Form + Zod
+- после редактирования и сохранение появлется плашка, которая исчезает через 4 сек
 
-## React Compiler
+## Запуск проекта
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+1. **Клонировать репозиторий**
 
-## Expanding the ESLint configuration
+   ```bash
+   https://github.com/Sergey-Kozlov-developer/users-card-test.git
+   ```
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+2. **Установить зависимости**
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+   ```bash
+   npm install
+   ```
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+3. **Запустить проект в режиме разработки**
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+   ```bash
+   npm run dev
+   ```
