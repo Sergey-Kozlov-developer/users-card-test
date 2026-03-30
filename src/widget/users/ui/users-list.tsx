@@ -40,10 +40,10 @@ const UsersList = ({users, isArchived, onArchive, onActivate, onHide}: UsersList
                         <img
                             src={userPhoto}
                             alt={user.name}
-                            className="users__card-img"
+                            className={`users__card-img ${isArchived ? ' users__card-img--archived' : ''}`}
                         />
                         <div className='users__text'>
-                            <p className='users__text-name'>{user.username}</p>
+                            <p className={`users__text-name ${isArchived ? 'users__text-name--archived' : ''}`}>{user.username}</p>
                             <p className='users__text-company'>{user.companyName}</p>
                             <p className='users__text-city'>{user.city}</p>
                         </div>

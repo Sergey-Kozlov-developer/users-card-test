@@ -2,6 +2,7 @@ import UsersList from "@/widget/users/ui/users-list.tsx";
 import {useUsers} from "@entities/user/api/queries.ts";
 import {useUserStore} from "@entities/model/user.store.ts";
 import {useEffect} from "react";
+import {Divider} from "@shared/ui";
 
 
 export const UsersWidget = () => {
@@ -36,6 +37,7 @@ export const UsersWidget = () => {
         <div className='users-widget'>
             <div className='users-widget__section'>
                 <h1 className='users-widget__title'>Активные</h1>
+                <Divider />
                 <UsersList
                     users={activeUsers}
                     onArchive={archiveUser}
@@ -46,6 +48,7 @@ export const UsersWidget = () => {
             {archivedUsers.length > 0 && (
                 <div className='users-widget__section'>
                     <h2 className='users-widget__subtitle'>Архив</h2>
+                    <Divider />
                     <UsersList
                         users={archivedUsers}
                         isArchived
