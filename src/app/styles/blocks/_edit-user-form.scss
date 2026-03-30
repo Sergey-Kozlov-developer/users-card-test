@@ -10,6 +10,10 @@
 	font-size: rem(24);
 	color: var(--color-01);
 	margin-bottom: rem(40);
+
+	@include mobile {
+	  margin-bottom: rem(16);
+	}
   }
 
   &__field {
@@ -21,6 +25,10 @@
 	margin-bottom: rem(8);
 	font-weight: 500;
 	font-size: rem(18);
+
+	@include mobile {
+	  font-size: rem(16);
+	}
   }
 
   &__input {
@@ -29,6 +37,11 @@
 	border: var(--border);
 	border-radius: rem(50);
 	font-size: rem(16);
+
+	@include mobile {
+	  padding: rem(6) rem(16);
+	  font-size: rem(14);
+	}
 
 	&--error {
 	  border-color: red;
@@ -51,6 +64,10 @@
 	cursor: pointer;
 	font-size: rem(16);
 	transition: all 0.4s ease-in-out;
+
+	@include mobile {
+	  width: 100%;
+	}
 
 	&:hover {
 	  background: var(--color-05);

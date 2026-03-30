@@ -1,4 +1,4 @@
-import { useParams, useNavigate } from 'react-router';
+import {useParams, useNavigate} from 'react-router';
 import {useUsers} from "@entities/user/api/queries.ts";
 import {useUserStore} from "@entities/model/user.store.ts";
 import {useState} from "react";
@@ -8,13 +8,13 @@ import {EditUserForm} from "@features/edit-user";
 import userPhoto from '@assets/images/edit-profile.png'
 
 export const EditUser = () => {
-    const { id } = useParams<{ id: string }>();
+    const {id} = useParams<{ id: string }>();
     const navigate = useNavigate();
-    const { data: apiUsers, isLoading: isLoadingUsers } = useUsers();
-    const { users, setUsers } = useUserStore();
+    const {data: apiUsers, isLoading: isLoadingUsers} = useUsers();
+    const {users, setUsers} = useUserStore();
     const [showToast, setShowToast] = useState(false);
 
-    if (isLoadingUsers) return <Loader />;
+    if (isLoadingUsers) return <Loader/>;
 
     const userId = Number(id);
     const user = users.find(u => u.id === userId) || apiUsers?.find(u => u.id === userId);
@@ -31,9 +31,9 @@ export const EditUser = () => {
                     name: data.name,
                     username: data.username,
                     email: data.email,
-                    address: { ...u.address, city: data.city },
+                    address: {...u.address, city: data.city},
                     phone: data.phone,
-                    company: { ...u.company, name: data.companyName },
+                    company: {...u.company, name: data.companyName},
                 }
                 : u
         );
@@ -49,31 +49,30 @@ export const EditUser = () => {
             </button>
 
             <div className="edit-user__field">
+                <div className="edit-user__profile">
+                    <img src={userPhoto} alt={user.name} className="edit-user__avatar"/>
+                    <h1 className="edit-user__title">Данные профиля</h1>
 
-            <div className="edit-user__profile">
-                <img src={userPhoto} alt={user.name} className="edit-user__avatar" />
-                <h1 className="edit-user__title">Данные профиля</h1>
+                    <div className="edit-user__info">
+                        <Divider/>
+                        <p className='edit-user__info-text'>Рабочее пространство</p>
+                        <Divider/>
 
-                <div className="edit-user__info">
-                    <Divider />
-                    <p className='edit-user__info-text'>Рабочее пространство</p>
-                    <Divider />
+                        <p className='edit-user__info-text'>Приватность</p>
+                        <Divider/>
 
-                    <p className='edit-user__info-text'>Приватность</p>
-                    <Divider />
+                        <p className='edit-user__info-text'>Безопасность</p>
+                        <Divider/>
 
-                    <p className='edit-user__info-text'>Безопасность</p>
-                    <Divider />
-
+                    </div>
                 </div>
-            </div>
 
-            <EditUserForm user={user} onSubmit={handleSave} />
+                <EditUserForm user={user} onSubmit={handleSave}/>
             </div>
 
             {showToast && (
                 <Toast
-                    message="Данные сохранены!"
+                    message="Изменения сохранены!!"
                     onClose={() => setShowToast(false)}
                 />
             )}
