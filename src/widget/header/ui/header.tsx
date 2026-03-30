@@ -15,8 +15,8 @@ export const Header = () => {
 					</span>
                     </div>
                     <div className="header__info">
-                        <img src={favorite} alt="Favorite"/>
-                        <img src={notification} alt="Notification"/>
+                        <img className='header__favorite' src={favorite} alt="Favorite"/>
+                        <img className='header__notification' src={notification} alt="Notification"/>
                         <div className="header__profile">
                             <img src={profile} className='header__profile-img' alt="Profile"/>
                             <span className='header__profile-name'>Ivan1234</span>
