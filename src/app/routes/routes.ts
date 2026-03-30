@@ -1,7 +1,7 @@
 import {createBrowserRouter} from "react-router";
 import Layout from "@app/layout/Layout.tsx";
 import {Home} from "@pages/home";
-import {Profile} from "@pages/profile";
+import {EditUser} from "@pages/edit-user";
 
 
 export const routes = createBrowserRouter([
@@ -14,8 +14,8 @@ export const routes = createBrowserRouter([
                 Component: Home
             },
             {
-                path: '/profile',
-                Component: Profile
+                path: '/profile/:id',
+                Component: EditUser
             }
         ]
     }

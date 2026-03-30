@@ -6,9 +6,9 @@ const transformUser = (apiUser: ApiUser): User => ({
     name: apiUser.name,
     username: apiUser.username,
     email: apiUser.email,
-    city: apiUser.address.city,
+    city: apiUser.address?.city || 'Не указан',
     phone: apiUser.phone,
-    companyName: apiUser.company.name,
+    companyName: apiUser.company?.name || 'Не указана',
 });
 
 export const usersApi = {
