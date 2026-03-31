@@ -5,6 +5,8 @@
 ## Использованный стек:
 **React, FSD, TypeScript, Zustand, React Hook Form + Zod, tanstack query, SCSS**
 
+- **использовал** архитектуру FSD, потому что с ней код более централизован
+
 ### Что реализовал:
 - на главной странице загрузка пользователей из jsonplaceholder [API](https://jsonplaceholder.typicode.com/users)
 - на главной странице есть активные и архивные пользователи
