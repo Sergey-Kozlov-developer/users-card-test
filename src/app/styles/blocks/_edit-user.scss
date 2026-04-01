@@ -13,6 +13,11 @@
 	display: grid;
 	grid-template-columns: repeat(1, 1fr);
 	}
+	@include tablet-s {
+
+	display: grid;
+	grid-template-columns: repeat(1, 1fr);
+	}
   }
 
   &__back {
@@ -44,6 +49,12 @@
 	margin-bottom: rem(16);
 	@include mobile {
 	  height: rem(187);
+	  object-fit: cover;
+	  border-radius: rem(8);
+	}
+	@include tablet-s {
+	  width: 100%;
+	  height: rem(487);
 	  object-fit: cover;
 	  border-radius: rem(8);
 	}

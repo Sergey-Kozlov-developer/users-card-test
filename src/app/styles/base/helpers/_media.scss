@@ -1,7 +1,8 @@
 @use './functions' as *;
 
 $laptop: 1439.98;
-$tablet: 1157.98;
+$tablet: 1184.98;
+$tablet-s: 767.98;
 $mobile: 430.98;
 $mobile-s: 319.98;
 
@@ -25,6 +26,11 @@ $mobile-s: 319.98;
 
 @mixin tablet {
     @media (width <= rem($tablet)) {
+        @content;
+    }
+}
+@mixin tablet-s {
+    @media (width <= rem($tablet-s)) {
         @content;
     }
 }
